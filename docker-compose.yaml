@@ -1,16 +1,10 @@
 services:
   app:
-    image: node:24.4.1-alpine3.22
-    command: bin/run
-    working_dir: /code
-    environment:
-      FORCE_COLOR: 1
-      NODE_OPTIONS: --import /code/src/hooks.js
+    build: .
     ports:
       - 80:80
     volumes:
       - ./bin:/code/bin
       - ./docs:/code/docs
-      - ./eslint.config.js:/code/eslint.config.js
       - ./package.json:/code/package.json
       - ./src:/code/src
