@@ -9,6 +9,6 @@ createServer((_, res) => {
   });
   res.on(
     'close',
-    watch({ patterns: ['docs/**'], onChange: () => res.write('data: {}\n\n') })
+    watch({ patterns: ['docs/**'], onChange: () => res.write('data:\n\n') })
   );
 }).listen(81);

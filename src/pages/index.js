@@ -6,7 +6,7 @@ export default () => (
       <div className='p-4 bg-white rounded-sm shadow-sm text-center'>
         <img src='/logo.svg' className='w-64' />
         <div>Hello</div>
-        <strong>World</strong>!
+        <strong>World</strong>
       </div>
     </div>
   </Page>
