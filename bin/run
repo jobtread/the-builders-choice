@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+apk add nginx
+cp src/nginx.conf /etc/nginx/nginx.conf
+
+NODE_OPTIONS= npm install
+
+trap 'kill 0' TERM INT
+nginx &
+node src/watch.js &
+node_modules/.bin/cogs -c src/cogs.js -w 'src/**' &
+wait

@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#*": "./*"
+  },
+  "dependencies": {
+    "@svgr/core": "8",
+    "@svgr/plugin-jsx": "8",
+    "@svgr/plugin-svgo": "8",
+    "@tailwindcss/postcss": "4",
+    "cogs-transformer-concat-commonjs": "3",
+    "cogs-transformer-esbuild": "1",
+    "cogs-transformer-postcss": "1",
+    "cogs-transformer-svgo": "1",
+    "cogs": "4",
+    "cssnano": "7",
+    "esbuild": "0.25",
+    "eslint-config-coderiety": "2",
+    "eslint-plugin-react-hooks": "5",
+    "eslint-plugin-react": "7",
+    "kysely": "0.28",
+    "lucide-static": "0",
+    "nodemailer": "7",
+    "react-dom": "19",
+    "react": "19",
+    "watchy": "0.12"
+  }
+}
