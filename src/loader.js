@@ -34,10 +34,7 @@ export const load = async (url, context, defaultLoad) => {
 
   if (isSvg) source = await transform(source, svgrOptions);
 
-  if (
-    isSvg ||
-    url.startsWith('file:///code/src/')
-  ) {
+  if (isSvg || url.startsWith('file:///code/src/')) {
     source = (await esbuild.transform(source, esbuildOptions)).code;
   }
 
