@@ -2,3 +2,66 @@
 
 @source './components';
 @source './pages';
+
+@theme {
+  --color-orange-50: #ffffb4;
+  --color-orange-100: #ffa650;
+  --color-orange-200: #ff923c;
+  --color-orange-300: #ff7e28;
+  --color-orange-400: #ff6a14;
+  --color-orange-500: #ff5600;
+  --color-orange-600: #eb4200;
+  --color-orange-700: #d72e00;
+  --color-orange-800: #c31a00;
+  --color-orange-900: #af0600;
+
+  --text-6xl: 4rem;
+  --text-7xl: 5rem;
+  --text-8xl: 6rem;
+  --text-9xl: 7rem;
+
+  --animate-appear: appear 0.5s ease-in-out;
+  --animate-fadeindown: fadeindown 0.5s ease-in-out;
+  --animate-fadeinup: fadeinup 0.5s ease-in-out;
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeindown {
+    0% { 
+      opacity: 0; 
+      transform: translate3d(0, -50%, 0); 
+    }
+    100% { 
+      opacity: 1; 
+      transform: translate3d(0, 0, 0); 
+    }
+  }
+  @keyframes fadeinup {
+    0% { 
+      opacity: 0; 
+      transform: translate3d(0, 50%, 0); 
+    }
+    100% { 
+      opacity: 1; 
+      transform: translate3d(0, 0, 0); 
+    }
+  }
+}
+
+@layer utilities {
+  .collapsible.open {
+    display: block;
+  }
+  .accordionBtn[aria-expanded='false'] > .hideBtn {
+    display: none;
+  }
+  .accordionBtn[aria-expanded='true'] > .showBtn {
+    display: none;
+  }
+}

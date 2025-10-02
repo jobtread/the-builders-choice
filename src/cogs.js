@@ -43,7 +43,8 @@ export default {
         dir: 'docs',
         ext: { '.js': '.html' }
       },
-      'src/index.css': { base: 'src', dir: 'docs' }
+      'src/index.css': { base: 'src', dir: 'docs' },
+      'src/index.js': { base: 'src', dir: 'docs' }
     }
   }
 };
