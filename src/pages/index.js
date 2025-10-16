@@ -11,35 +11,40 @@ import UList from '#src/components/typography/unordered-list.js';
 
 export default () => (
   <Page title="The Builder's Choice">
-    <Section customClasses='bg-gray-200' size='none'>
-      <div className='md:flex md:items-center gap-4 lg:gap-8'>
-        <div>
-          <h1 className='mt-8 mb-4 text-sm font-bold text-orange-500 uppercase tracking-wide'>
-            Superheader Here
-          </h1>
-          <h2 className='text-4xl md:text-5xl mb-4'>
-            Get the Builder&apos;s Choice
-          </h2>
-          <p className='leading-relaxed mb-4 font-light pr-8'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et
-            quam condimentum, blandit nulla non, tristique lorem. Ut interdum,
-            orci non cursus consectetur, dolor mi porttitor ante, et tincidunt
-            lorem mauris eu enim. Vestibulum libero nulla, venenatis nec neque
-            in, gravida ultrices enim.
-          </p>
-          <Btn
-            text='Purchase Book'
-            url='/request-a-demo'
-            customClasses='inline-flex mb-8'
-            size='sm'
-            btnColor='teal'
-          />
+    <div className='bg-white bg-linear-to-t from-tbcOrange to-tbcYellow'>
+      <Section
+        customClasses="bg-[url('/images/abstract-boxes-bg.svg')] bg-no-repeat bg-contain bg-right"
+        size='none'
+      >
+        <div className='md:flex md:items-center gap-4 lg:gap-8'>
+          <div>
+            <h1 className='text-tbcBlueMed mt-8 mb-4 text-sm font-bold uppercase tracking-wide'>
+              Superheader Here
+            </h1>
+            <h2 className='text-tbcBlueDark font-display font-medium tracking-tight text-5xl md:text-6xl mb-4'>
+              Get the Builder&apos;s Choice
+            </h2>
+            <p className='text-tbcLicorice leading-relaxed mb-4 font-light pr-8'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et
+              quam condimentum, blandit nulla non, tristique lorem. Ut interdum,
+              orci non cursus consectetur, dolor mi porttitor ante, et tincidunt
+              lorem mauris eu enim. Vestibulum libero nulla, venenatis nec neque
+              in, gravida ultrices enim.
+            </p>
+            <Btn
+              text='Purchase Book'
+              url='/request-a-demo'
+              customClasses='inline-flex mb-8'
+              size='sm'
+              btnColor='blue'
+            />
+          </div>
+          <div className='flex-none max-w-[600px]'>
+            <img src='/images/book-hdr.webp' alt='' />
+          </div>
         </div>
-        <div className='flex-none max-w-[600px]'>
-          <img src='/images/book-hdr.webp' alt='' />
-        </div>
-      </div>
-    </Section>
+      </Section>
+    </div>
     <Section>
       <div className='md:flex md:gap-12'>
         <div>

@@ -1,9 +1,16 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 @import 'tailwindcss' source(none);
 
 @source './components';
 @source './pages';
 
 @theme {
+  --font-display: "Barlow Condensed", sans-serif; 
+
   --color-orange-50: #ffffb4;
   --color-orange-100: #ffa650;
   --color-orange-200: #ff923c;
@@ -14,6 +21,16 @@
   --color-orange-700: #d72e00;
   --color-orange-800: #c31a00;
   --color-orange-900: #af0600;
+
+  /* CSS HEX */
+  --color-tbcBlueLight: #7699B9ff;
+  --color-tbcBlueMed: #375E9Fff;
+  --color-tbcBlueDark: #182671ff;
+  --color-tbcBlack: #222834ff;
+  --color-tbcOrange: #FDAF34ff;
+  --color-tbcYellow: #FED947ff;
+  --color-tbcSmoke: #F3F3F3ff;
+  --color-tbcLicorice: #170C0Aff;
 
   --text-6xl: 4rem;
   --text-7xl: 5rem;

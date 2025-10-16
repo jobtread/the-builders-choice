@@ -3,7 +3,8 @@ import ArrowRight from '#src/components/svgs/arrow-right.svg';
 const assignColor = clr => {
   var colors = {
     orange: 'bg-orange-500 hover:bg-gray-700 text-white hover:text-white',
-    teal: 'bg-teal-500 hover:bg-gray-700 text-white hover:text-white'
+    teal: 'bg-teal-500 hover:bg-gray-700 text-white hover:text-white',
+    blue: 'bg-tbcBlueDark hover:bg-tbcLicorice text-white hover:text-white'
   };
   return colors[clr];
 };

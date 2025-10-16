@@ -3,7 +3,7 @@ import Container from '#src/components/container.js';
 const ClassyLink = ({ href, children }) => (
   <a
     href={href}
-    className='block text-gray-600 hover:text-gray-900 font-light py-4 px-4 lg:p-0 border-b-2 border-transparent hover:border-blue-500'
+    className='block font-display text-tbcLicorice tracking-tight hover:text-tbcBlueMed text-xl py-4 px-4 lg:p-0 border-b-2 border-transparent hover:border-tbcBlueMed'
   >
     {children}
   </a>
@@ -21,7 +21,7 @@ const PurchaseBtn = ({ href, children }) => (
 export default () => (
   <div
     id='main-nav'
-    className='fixed lg:sticky top-0 w-full bg-gray-100 z-50 print:hidden'
+    className='fixed lg:sticky top-0 w-full bg-white shadow-md border-b border-gray-100 z-50 print:hidden'
   >
     <Container>
       <nav className='w-full lg:flex items-center lg:justify-between px-4 py-4 md:px-8 md:py-6 xl:px-0'>
@@ -29,7 +29,7 @@ export default () => (
           <a href='/' className='inline-block hover:opacity-80'>
             <img
               className='h-[20px] xl:h-[30px]'
-              src='/images/temp-logo.svg'
+              src='/images/the-builders-choice-logo.svg'
               alt="The Builder's Choice"
             />
           </a>
