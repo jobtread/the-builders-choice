@@ -2,12 +2,63 @@ import Accordion from '#src/components/accordion.js';
 import Btn from '#src/components/btn.js';
 import Page from '#src/components/page.js';
 import Section from '#src/components/section.js';
+import StarIcon from '#src/components/svgs/star.svg';
 import Heading4 from '#src/components/typography/heading-four.js';
 import Heading1 from '#src/components/typography/heading-one.js';
 import Heading3 from '#src/components/typography/heading-three.js';
 import Heading2 from '#src/components/typography/heading-two.js';
 import OList from '#src/components/typography/ordered-list.js';
 import UList from '#src/components/typography/unordered-list.js';
+
+const TestimonialCard = ({
+  fullName,
+  jobTitle,
+  company,
+  profileImg,
+  logo,
+  quote
+}) => (
+  <div className='bg-white border border-gray-100 rounded-md p-6 md:p-8 flex flex-col justify-between shadow-sm'>
+    <div>
+      <div className='flex justify-between'>
+        <div>
+          <div className='font-semibold text-2xl'>{fullName}</div>
+          {jobTitle ? <span>{jobTitle}, </span> : ''}{' '}
+          <span className=''>{company}</span>
+          <div className='flex mt-3'>
+            <StarIcon className='h-[20px] text-tbcOrange' />
+            <StarIcon className='h-[20px] text-tbcOrange' />
+            <StarIcon className='h-[20px] text-tbcOrange' />
+            <StarIcon className='h-[20px] text-tbcOrange' />
+            <StarIcon className='h-[20px] text-tbcOrange' />
+            <span className='sr-only'>Rated 5 Stars</span>
+          </div>
+        </div>
+        {profileImg && (
+          <img
+            className='flex-none w-[80px] h-[80px] bg-gray-500 rounded-full border-2'
+            src={fullName}
+          />
+        )}
+      </div>
+      <div className='py-6 italic sm:text-lg'>
+        <span>&quot;</span>
+        {quote}
+        <span>&quot;</span>
+      </div>
+    </div>
+    {logo && (
+      <div className='h-[50px] sm:h-[80px] w-full flex items-end'>
+        <img
+          className='max-h-[60px] max-w-[100px] sm:max-w-[140px]'
+          src={logo}
+          alt={company}
+          loading='lazy'
+        />
+      </div>
+    )}
+  </div>
+);
 
 export default () => (
   <Page title="The Builder's Choice">
@@ -45,6 +96,34 @@ export default () => (
         </div>
       </Section>
     </div>
+    <Section>
+      <div className='grid grid-cols-3 gap-4'>
+        <TestimonialCard
+          fullName='John Smith'
+          jobTitle='Owner'
+          company='Somem Company'
+          profileImg={false}
+          logo={false}
+          quote='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        />
+        <TestimonialCard
+          fullName='John Smith'
+          jobTitle='Owner'
+          company='Somem Company'
+          profileImg={false}
+          logo={false}
+          quote='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        />
+        <TestimonialCard
+          fullName='John Smith'
+          jobTitle='Owner'
+          company='Somem Company'
+          profileImg={false}
+          logo={false}
+          quote='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        />
+      </div>
+    </Section>
     <Section>
       <div className='md:flex md:gap-12'>
         <div>
