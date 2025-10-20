@@ -12,7 +12,7 @@ const ClassyLink = ({ href, children }) => (
 const PurchaseBtn = ({ href, children }) => (
   <a
     href={href}
-    className='block text-base px-4 py-2 lg:px-6 lg:py-3 leading-none border rounded-sm text-white border-blue-600 bg-blue-600 hover:border-blue-500 hover:text-blue-500 hover:bg-white lg:mt-0'
+    className='block text-base px-4 py-2 lg:px-6 lg:py-3 leading-none border rounded-sm text-white border-tbcBlueDark bg-tbcBlueDark hover:border-tbcBlueDark hover:text-tbcBlueDark hover:bg-white lg:mt-0'
   >
     {children}
   </a>

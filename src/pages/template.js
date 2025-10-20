@@ -1,5 +1,5 @@
 import Accordion from '#src/components/accordion.js';
-import Btn from '#src/components/btn.js';
+// import Btn from '#src/components/btn.js';
 import Page from '#src/components/page.js';
 import Section from '#src/components/section.js';
 import Heading4 from '#src/components/typography/heading-four.js';
@@ -9,42 +9,126 @@ import Heading2 from '#src/components/typography/heading-two.js';
 import OList from '#src/components/typography/ordered-list.js';
 import UList from '#src/components/typography/unordered-list.js';
 
+const ColorSwatch = ({ pms, cmyk, hex, name, invert }) => {
+  return (
+    <div className='shadow-sm border border-tbcSmoke text-xs rounded-md'>
+      <div
+        className={`h-[100px] p-3 flex justify-start items-end font-medium uppercase ${
+          invert ? '' : 'text-white'
+        }`}
+        style={{ background: `#${hex}` }}
+      >
+        {name}
+      </div>
+      <div className='p-3 pb-8 space-y-2'>
+        {pms && (
+          <div>
+            <strong>PANTONE</strong> {pms}
+          </div>
+        )}
+        {cmyk && (
+          <div>
+            <strong>CMYK</strong> {cmyk}
+          </div>
+        )}
+        {hex && (
+          <div>
+            <strong>HEX</strong> {hex}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const SubSection = ({ children }) => (
+  <div className='py-8 mt-8 border-t border-gray-100'>{children}</div>
+);
+const SubSectionDesc = ({ children }) => (
+  <div className='font-light max-w-[800px] mb-8'>{children}</div>
+);
+const SubSectionHeader = ({ children }) => (
+  <div className='font-display font-medium text-tbcBlueMed text-3xl mt-8'>
+    {children}
+  </div>
+);
+
+const primaryColors = [
+  { cmyk: false, hex: '182671ff', name: 'tbcBlueDark' },
+  { cmyk: false, hex: '375E9Fff', name: 'tbcBlueMed' },
+  { cmyk: false, hex: '7699B9ff', name: 'tbcBlueLight' },
+  { cmyk: false, hex: 'FDAF34ff', name: 'tbcOrange', invert: true },
+  { cmyk: false, hex: 'FED947ff', name: 'tbcYellow', invert: true },
+  { cmyk: false, hex: 'F3F3F3ff', name: 'tbcSmoke', invert: true },
+  { cmyk: false, hex: '170C0Aff', name: 'tbcLicorice' },
+  { cmyk: false, hex: '222834ff', name: 'tbcBlack' }
+];
+
 export default () => (
   <Page title="The Builder's Choice">
-    <div className='bg-white bg-linear-to-t from-tbcOrange to-tbcYellow'>
+    <div className='bg-tbcYellow bg-linear-to-t from-tbcOrange to-tbcYellow'>
       <Section
         customClasses="bg-[url('/images/abstract-boxes-bg.svg')] bg-no-repeat bg-contain bg-right"
         size='none'
       >
-        <div className='md:flex md:items-center gap-4 lg:gap-8'>
-          <div>
-            <h1 className='text-tbcBlueMed mt-8 mb-4 text-sm font-bold uppercase tracking-wide'>
-              Superheader Here
-            </h1>
-            <h2 className='text-tbcBlueDark font-display font-medium tracking-tight text-5xl md:text-6xl mb-4'>
-              Get the Builder&apos;s Choice
-            </h2>
-            <p className='text-tbcLicorice leading-relaxed mb-6 font-light pr-8'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et
-              quam condimentum, blandit nulla non, tristique lorem. Ut interdum,
-              orci non cursus consectetur, dolor mi porttitor ante, et tincidunt
-              lorem mauris eu enim. Vestibulum libero nulla, venenatis nec neque
-              in, gravida ultrices enim.
-            </p>
-            <Btn
-              text='Purchase Book'
-              url='/request-a-demo'
-              customClasses='inline-flex mb-8'
-              size='sm'
-              btnColor='blue'
-            />
-          </div>
-          <div className='flex-none max-w-[600px]'>
-            <img src='/images/book-hdr.webp' alt='' />
-          </div>
+        <div className='py-12'>
+          <h1 className='text-tbcBlueMed mt-8 mb-4 text-sm font-bold uppercase tracking-wide'>
+            The Builder&apos;s Choice
+          </h1>
+          <h2 className='text-tbcBlueDark font-display font-medium tracking-tight text-5xl md:text-6xl mb-4'>
+            Branding Guide
+          </h2>
         </div>
       </Section>
     </div>
+    <Section>
+      <SubSection>
+        <SubSectionHeader>Primary Colors</SubSectionHeader>
+        <SubSectionDesc>
+          Primary colors should be used where possible. Brand Orange should
+          always web included as either a primary fill or primary accent within
+          a composition.
+        </SubSectionDesc>
+        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+          {primaryColors.map(color => (
+            <ColorSwatch
+              key={color.hex}
+              cmyk={color.cmyk}
+              hex={color.hex}
+              name={color.name}
+              invert={color.invert}
+            />
+          ))}
+        </div>
+      </SubSection>
+      <SubSection>
+        <SubSectionHeader>Grays</SubSectionHeader>
+        <SubSectionDesc>
+          Grays can be used in combination with any primary and secondary
+          colors. In most cases, the gray serves as a background to denote a
+          separation of content (like sections on a web page) and is most often
+          paired with white.
+        </SubSectionDesc>
+        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+          {/* <ColorSwatch
+            pms='Black 6 C'
+            cmyk='82, 71, 59, 75'
+            hex='101820'
+            name='Pantone Black 6 C'
+          /> */}
+          <ColorSwatch cmyk='76, 69, 64, 82' hex='0e0f13' name='Brand Black' />
+          <ColorSwatch cmyk='0, 0, 0, 100' hex='000000' name='Text Black' />
+          <ColorSwatch cmyk='80, 73, 57, 73' hex='181a24' name='Gray 8' />
+          <ColorSwatch cmyk='75, 67, 47, 36' hex='404353' name='Primary Gray' />
+          <ColorSwatch cmyk='69, 60, 45, 24' hex='545765' name='Gray 6' />
+          <ColorSwatch cmyk='52, 43, 34, 3' hex='838591' name='Gray 5' invert />
+          <ColorSwatch cmyk='33, 26, 22, 0' hex='acaeb5' name='Gray 4' invert />
+          <ColorSwatch cmyk='15, 11, 9, 0' hex='d5d7db' name='Gray 3' invert />
+          <ColorSwatch cmyk='6, 4, 3, 0' hex='ecedf0' name='Gray 2' invert />
+          <ColorSwatch cmyk='3, 1, 0, 0' hex='f5f7fa' name='Gray 1' invert />
+        </div>
+      </SubSection>
+    </Section>
     <Section>
       <div className='md:flex md:gap-12'>
         <div>

@@ -2,7 +2,7 @@ import Section from '#src/components/section.js';
 
 export default () => (
   <>
-    <footer className='bg-gray-900 px-4 py-20 mt-12'>
+    <footer className='bg-tbcBlueDark px-4 py-20 mt-12'>
       <Section>
         <div className='md:flex md:justify-between md:gap-4 mx-auto'>
           <div className='text-center mb-12 md:mb-0 md:text-left text-xs'>
